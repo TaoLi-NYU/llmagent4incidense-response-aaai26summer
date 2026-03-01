@@ -161,3 +161,26 @@ static
 package-lock.json
 
 .pypirc
+
+# ===== Local training outputs / checkpoints (DO NOT COMMIT) =====
+llm_recovery_runs-newdataset/
+transformed-dataset-lora/
+transformed-updated-dataset(first_alert)-lora/
+transformed-updated-dataset(preprocessing)-lora/
+transformed-updated-dataset-lora/
+
+tests/checkpoint-*/
+checkpoint-*/
+src/llm_recovery/evaluation/eval_attack_log_entries.py
+
+
+# model weights / adapters
+*.pt
+*.bin
+*.ckpt
+*.safetensors
+
+# optional: common output dirs
+outputs/
+results/
+logs/

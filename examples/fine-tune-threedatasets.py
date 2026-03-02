@@ -25,23 +25,16 @@ if __name__ == '__main__':
     """
     ds_states = load_dataset("kimhammar/CSLE-IncidentResponse-V1", data_files="states_examples.json")
     train_states = ds_states["train"][0]                
-    instructions_states = train_states["instructions"]  # ["intruction0", "...", "instructionN"]
-    answers_states = train_states["answers"]            # ["answer0", "...", "answerN"]
+    instructions_states = train_states["instructions"]  
+    answers_states = train_states["answers"]            
 
     ds_actions = load_dataset("kimhammar/CSLE-IncidentResponse-V1", data_files="action_examples.json")
     train_actions = ds_actions["train"][0]
     instructions_actions = train_actions["instructions"]
     answers_actions = train_actions["answers"]
-
-    # load_dataset("json", data_files=...) 会默认生成一个 DatasetDict，分割名通常就是 "train"，所以 ds_new["train"] 是存在的
-    # 会看到类似：DatasetDict({ train: Dataset(...) })
-    # 10868条data points
-    
     new_data_path = r"/content/drive/MyDrive/transformed_dataset_cls_pri_all2preprocessing.json"
     ds_new = load_dataset("json", data_files=new_data_path)
     
-    
-    # ds_new["train"] 里每一行就是一个 dict，抽出 instruction / output 两列
     instructions_new = [row["instruction"] for row in ds_new["train"]] # ["intruction0", "...", "instructionN"]
     answers_new = [row["output"] for row in ds_new["train"]]           # ["answer0", "...", "answerN"]
 
@@ -68,11 +61,7 @@ if __name__ == '__main__':
     print(f"new_data: {new_n}")
     print(f"action_examples: {actions_n}")
 
-    """
-    zip 就是把多个可迭代对象 (list/tuple/string…) 按“同一位置”打包成一组一组的元组
-    a = [1, 2, 3]   b = ["x", "y", "z"]     list(zip(a, b))
-    [(1, 'x'), (2, 'y'), (3, 'z')]
-    """
+
     combined = list(zip(instructions, answers))
     rng = random.Random(seed)
     rng.shuffle(combined) # 打乱顺序

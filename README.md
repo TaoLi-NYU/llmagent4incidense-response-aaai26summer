@@ -135,8 +135,10 @@ make release
 ```
 
 ## Author & Maintainer
-Yiran Gao
+Yiran Gao gaoyiran525@gmail.com
+
 Kim Hammar <kimham@kth.se>
+
 li.tao@cityu.edu.hk
 
 ## Copyright and license

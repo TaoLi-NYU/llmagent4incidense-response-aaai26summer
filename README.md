@@ -147,5 +147,5 @@ li.tao@cityu.edu.hk
 
 Creative Commons
 
-(C) 2025, Kim Hammar
+Copyright (c) 2026 Yiran Gao, Kim Hammar, Tao Li.
 

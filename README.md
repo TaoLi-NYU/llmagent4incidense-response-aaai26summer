@@ -1,6 +1,6 @@
 # Decision-Theoretic Incident Response Planning with a Lightweight Large Language Model
 
-A decision-support system powered by a foundation model for recovering from cyberattacks in networked systems.
+In-Context Autonomous Network Incident Response: An End-to-End Large Language Model Agent Approach
 
 ## Requirements
 

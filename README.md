@@ -15,27 +15,6 @@ This repository contains the artifacts related to the paper "In-Context Autonomo
 - `bitsandbytes`
 - `accelerate`
 
-## Development Requirements
-
-- Python 3.8+
-- `flake8` (for linting)
-- `flake8-rst-docstrings` (for linting docstrings)
-- `tox` (for automated testing)
-- `pytest` (for unit tests)
-- `pytest-cov` (for unit test coverage)
-- `mypy` (for static typing)
-- `mypy-extensions` (for static typing)
-- `mypy-protobuf` (for static typing)
-- `types-PyYaml` (for static typing)
-- `types-paramiko` (for static typing)
-- `types-protobuf` (for static typing)
-- `types-requests` (for static typing)
-- `types-urllib3` (for static typing)
-- `sphinx` (for API documentation)
-- `sphinxcontrib-napoleon` (for API documentation)
-- `sphinx-rtd-theme` (for API documentation)
-- `pytest-mock` (for mocking tests)
-- `pytest-grpc` (for grpc tests)
 
 ## Installation
 
@@ -112,27 +91,6 @@ tox
 make tests
 ```
 
-## Create a new release and publish to PyPi
-
-First build the package by executing:
-```bash
-python -m build
-# or (equivalently)
-make build
-```
-After running the command above, the built package is available at `./dist`.
-
-Push the built package to PyPi by running:
-```bash
-python -m twine upload dist/*
-# or (equivalently)
-make push
-```
-
-To run all commands for the release at once, execute:
-```bash
-make release
-```
 
 ## Author & Maintainer
 Yiran Gao gaoyiran525@gmail.com

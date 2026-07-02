@@ -15,80 +15,36 @@ This repository contains the artifacts related to the paper "In-Context Autonomo
 - `bitsandbytes`
 - `accelerate`
 
-
 ## Installation
 
+Clone the repository and install it in editable mode:
+
 ```bash
-# install from pip
-pip install llm_recovery==<version>
-# local install from source
-$ pip install -e llm_recovery
-# or (equivalently):
-make install
-# force upgrade deps
-$ pip install -e llm_recovery --upgrade
-# git clone and install from source
-git clone https://github.com/Limmen/llm_recovery
-cd llm_recovery
-pip3 install -e .
-# Install development dependencies
-$ pip install -r requirements_dev.txt
+git clone https://github.com/TaoLi-NYU/llmagent4incidense-response-aaai26summer.git
+cd llmagent4incidense-response-aaai26summer
+pip install -e .
 ```
 
-### Development tools
+To install or upgrade the required dependencies:
 
-Install all development tools at once:
 ```bash
-make install_dev
+pip install -e . --upgrade
 ```
-or
+
+## Development
+
+Install the development dependencies:
+
 ```bash
 pip install -r requirements_dev.txt
 ```
 
-## Static code analysis
-
-To run the Python linter, execute the following command:
-```
-flake8 .
-# or (equivalently):
-make lint
-```
-
-To run the mypy type checker, execute the following command:
-```
-mypy .
-# or (equivalently):
-make types
-```
-
-## Unit tests
-
-To run all the unit tests, execute the following command:
-```
-pytest
-# or (equivalently):
-make unit_tests
-```
-
-To run tests of a specific test suite, execute the following command:
-```
-pytest -k "ClassName"
-```
-
-To generate a coverage report, execute the following command:
-```
-pytest --cov=llm_recovery
-```
-
-## Run tests and code analysis in different python environments
-
-To run tests and code analysis in different python environments, execute the following command:
+Run code checks and tests:
 
 ```bash
-tox
-# or (equivalently):
-make tests
+flake8 .
+mypy .
+pytest
 ```
 
 

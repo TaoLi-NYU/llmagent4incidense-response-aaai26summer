@@ -102,7 +102,12 @@ load_dataset("kimhammar/CSLE-IncidentResponse-V1", data_files="states_examples.j
 Expected output:
 
 ```text
-Loading checkpoint shards: 100% 4/4 [00:34<00:00,  8.60s/it]
+Fetching 4 files: 100% 4/4 [01:15<00:00, 18.91s/it]
+Loading checkpoint shards: 100% 4/4 [00:34<00:00,  8.63s/it]
+generation_config.json: 100% 181/181 [00:00<00:00, 1.36MB/s]
+README.md: 100% 33.0/33.0 [00:00<00:00, 242kB/s]
+states_examples.json: 100% 1.30G/1.30G [00:04<00:00, 280MB/s]
+Generating train split: 1 examples [00:15, 15.77s/ examples]
 Trainable parameters: 50331648
 
 Step: 1, Epoch: 0.0006, Progress: 0.06%, Avg_loss=1.7383, LR=0.00095000, Grad_norm=1.3308, minutes: 1.2491

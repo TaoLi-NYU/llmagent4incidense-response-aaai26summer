@@ -47,6 +47,9 @@ mypy .
 pytest
 ```
 
+## Artifacts
+
+The first public fine-tuning dataset of incidents and response actions. This is the dataset we use to produce the results in the paper. The dataset can be downloaded [here](https://huggingface.co/datasets/kimhammar/CSLE-IncidentResponse-V1/tree/main).
 
 ## Author & Maintainer
 Yiran Gao gaoyiran525@gmail.com

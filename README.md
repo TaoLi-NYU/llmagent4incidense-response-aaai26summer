@@ -49,7 +49,11 @@ pytest
 
 ## Artifacts
 
-The first public fine-tuning dataset of incidents and response actions. This is the dataset we use to produce the results in the paper. The dataset can be downloaded [here](https://huggingface.co/datasets/kimhammar/CSLE-IncidentResponse-V1/tree/main).
+- The incident-response fine-tuning dataset used in our experiments is available on
+  [Hugging Face](https://huggingface.co/datasets/kimhammar/CSLE-IncidentResponse-V1/tree/main).
+
+- The LoRA adapter weights of our fine-tuned model are available on
+  [Hugging Face](https://huggingface.co/GYR1-determine/llmagent4incident-response).
 
 ## Author & Maintainer
 Yiran Gao gaoyiran525@gmail.com

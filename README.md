@@ -88,7 +88,7 @@ I note that the attacker IPs are actively communicating with internal systems an
     "Action": "Block all traffic to attacker IPs 185.140.53.11, 185.140.53.12, and 185.140.53.13 at perimeter firewalls and immediately isolate WikiServer (203.0.113.120) and DevWorkstation (10.66.22.41) from the network.",
     "Explanation": "Cutting external and internal communication halts spread and C2, achieving immediate containment."
 }<｜end▁of▁sentence｜>
-
+```
 
 
 

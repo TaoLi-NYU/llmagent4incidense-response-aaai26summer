@@ -91,6 +91,57 @@ I note that the attacker IPs are actively communicating with internal systems an
 ```
 
 
+## Fine-tuning DeepSeek-R1-Distill-Qwen-14B on our incident dataset
+
+To fine-tune the model for incident identification, use `examples/fine_tune_action_generation.py` and replace its `load_dataset` call with:
+
+```python
+load_dataset("kimhammar/CSLE-IncidentResponse-V1", data_files="incident_examples.json")
+```
+
+Expected output:
+
+```text
+Fetching 4 files: 100% 4/4 [01:13<00:00, 18.34s/it]
+Loading checkpoint shards: 100% 4/4 [00:33<00:00,  8.30s/it]
+generation_config.json: 100% 181/181 [00:00<00:00, 1.41MB/s]
+README.md: 100% 33.0/33.0 [00:00<00:00, 250kB/s]
+incident_examples.json: 100% 190M/190M [00:01<00:00, 135MB/s]
+Generating train split: 1 examples [00:02,  2.51s/example]
+Trainable parameters: 50331648
+
+Step: 1, Epoch: 0.0016, Progress: 0.16%, Avg_loss=1.1644, LR=0.00095000, Grad_norm=0.4378, minutes: 1.0350
+
+...
+
+Step: 199, Epoch: 0.3184, Progress: 31.84%, Avg_loss=0.6381, LR=0.00064904, Grad_norm=0.1456, minutes: 158.3210
+prediction:
+I note that in the logs there is no recorded activity or events; the logs are entirely blank, which means there is no evidence of suspicious or malicious behavior to analyze. Given that the system description outlines a peer-to-peer network with a decentralized mesh topology and multiple nodes each performing distinct roles such as bootstrap_node, relay_node, edge_node, validator_node, storage_node, and dht_node, I would expect to see logs indicating routine network traffic, peer discovery, data exchange, or consensus operations if there were any anomalies. The absence of any log entries suggests that the network is operating without issues or alerts. Additionally, the security monitoring system, which is a distributed Snort IDS covering all nodes with logs sent to 172.16.100.5, would normally capture and record any suspicious activities, such as intrusion attempts, known malicious IP connections, or protocol violations. Since no such entries appear in the logs, I infer that no security events or intrusions have been detected. The firewall rules include default allow_p2p_protocols and rate_limit_new_connections, which align with normal p2p network behavior, and the external_restrictions block known malicious IPs and limit new connections, further reducing the chance of successful attacks. Therefore, the combination of an empty log, a secure network design, and active security monitoring strongly supports the conclusion that the system is operating normally and that there is no incident or cyberattack occurring.</think>
+{
+    "Entities": {},
+    "Incident": "No",
+    "Incident description": "No incident can be inferred from the logs because they contain no substantial information.",
+    "MITRE ATT&CK Tactics": [],
+    "MITRE ATT&CK Techniques": []
+}
+label:
+I note that in the logs provided, there is no information or recorded events indicating any abnormal activity, alerts, or warnings that might suggest a cyberattack or incident. Since the logs are completely blank, no suspicious connections, errors, or intrusion detection system (IDS) alerts such as those from Snort are present. I also observe from the system description that the IDS is deployed in a distributed manner covering all nodes, with centralized logging at 172.16.100.5. This comprehensive coverage makes it unlikely that any incidents would go undetected or unlogged if they occurred in the network. Additionally, the network is configured in a secured decentralized mesh topology with clear firewall rules including blocking known malicious IPs and rate-limiting new connections, which further reduces the attack surface and likelihood of successful intrusion. The system’s default policy allows peer-to-peer protocols, which explains normal traffic patterns without triggering alerts. Therefore, considering the absence of any logged suspicious activity, the robust IDS deployment, security firewall policies, and the controlled peer-to-peer environment, I conclude that the current blank logs and system state do not indicate a cyberattack incident but reflect normal operation.</think>
+{
+    "Entities": {},
+    "Incident": "No",
+    "Incident description": "No incident can be inferred from the logs because they contain no substantial information.",
+    "MITRE ATT&CK Tactics": [],
+    "MITRE ATT&CK Techniques": []
+}<｜end▁of▁sentence｜>
+
+...
+```
+
+
+
+
+
+
 
 ## Author & Maintainer
 Yiran Gao gaoyiran525@gmail.com

@@ -91,6 +91,50 @@ I note that the attacker IPs are actively communicating with internal systems an
 ```
 
 
+## Fine-tuning DeepSeek-R1-Distill-Qwen-14B on our state prediction dataset
+
+To fine-tune the model for state prediction, use `examples/fine_tune_action_generation.py` and replace its `load_dataset` call with:
+
+```python
+load_dataset("kimhammar/CSLE-IncidentResponse-V1", data_files="states_examples.json")
+```
+
+Expected output:
+
+```text
+Loading checkpoint shards: 100% 4/4 [00:34<00:00,  8.60s/it]
+Trainable parameters: 50331648
+
+Step: 1, Epoch: 0.0006, Progress: 0.06%, Avg_loss=1.7383, LR=0.00095000, Grad_norm=1.3308, minutes: 1.2491
+
+...
+
+Step: 249, Epoch: 0.1594, Progress: 15.93%, Avg_loss=0.4396, LR=0.00079926, Grad_norm=0.1929, minutes: 98.7646
+prediction:
+I see that reviewing logs and performing forensic triage provides sufficient knowledge to understand the attack timeline and scope, so I update knowledge sufficiency to true.</think>
+{
+    "are_forensics_preserved": true,
+    "is_attack_contained": true,
+    "is_eradicated": false,
+    "is_hardened": false,
+    "is_knowledge_sufficient": true,
+    "is_recovered": false
+}
+label:
+By reviewing and analyzing the collected logs and evidence, I gain detailed understanding of the attack timeline and scope. Therefore, knowledge is now sufficient, with forensic evidence preserved and containment maintained.</think>
+{
+    "are_forensics_preserved": true,
+    "is_attack_contained": true,
+    "is_eradicated": false,
+    "is_hardened": false,
+    "is_knowledge_sufficient": true,
+    "is_recovered": false
+}<｜end▁of▁sentence｜>
+
+...
+```
+
+
 ## Fine-tuning DeepSeek-R1-Distill-Qwen-14B on our incident dataset
 
 To fine-tune the model for incident identification, use `examples/fine_tune_action_generation.py` and replace its `load_dataset` call with:

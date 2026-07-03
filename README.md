@@ -55,6 +55,17 @@ pytest
 - The LoRA adapter weights of our fine-tuned model are available on
   [Hugging Face](https://huggingface.co/GYR1-determine/llmagent4incident-response).
 
+## Fine-tuning DeepSeek-R1-Distill-Qwen-14B on our action generation dataset
+
+Command:
+
+```bash
+python examples/fine_tune_action_generation.py
+```
+
+Expected output:
+
+
 ## Author & Maintainer
 Yiran Gao gaoyiran525@gmail.com
 

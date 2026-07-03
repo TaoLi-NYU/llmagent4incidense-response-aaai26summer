@@ -64,6 +64,32 @@ python examples/fine_tune_action_generation.py
 ```
 
 Expected output:
+```text
+Fetching 4 files: 100% 4/4 [01:16<00:00, 19.04s/it]
+Loading checkpoint shards: 100% 4/4 [00:33<00:00,  8.25s/it]
+generation_config.json: 100% 181/181 [00:00<00:00, 2.02MB/s]
+README.md: 100% 33.0/33.0 [00:00<00:00, 363kB/s]
+action_examples.json: 100% 694M/694M [00:05<00:00, 136MB/s]
+Generating train split: 1 examples [00:09,  9.84s/example]
+Trainable parameters: 50331648
+
+...
+
+Step: 299, Epoch: 0.1086, Progress: 10.86%, Avg_loss=0.9460, LR=0.00084720, Grad_norm=0.3544, minutes: 315.9855
+prediction:
+I note that the attacker is actively communicating with our internal and external resources, so I choose to immediately isolate the affected hosts and block all traffic to and from the attacker IPs to stop further spread and data exfiltration.</think>
+{
+    "Action": "Isolate WikiServer, GitServer, and DevWorkstation; block all traffic to and from 185.140.53.11, 185.140.53.12, and 185.140.53.13 at firewalls and proxies.",
+    "Explanation": "Immediate isolation and blocking halt attacker communication and lateral movement."
+}
+label:
+I note that the attacker IPs are actively communicating with internal systems and facilitating lateral movement, so to immediately stop further spread and communication, I choose to block their IPs at the perimeter and isolate the most affected hosts to contain the attack.</think>
+{
+    "Action": "Block all traffic to attacker IPs 185.140.53.11, 185.140.53.12, and 185.140.53.13 at perimeter firewalls and immediately isolate WikiServer (203.0.113.120) and DevWorkstation (10.66.22.41) from the network.",
+    "Explanation": "Cutting external and internal communication halts spread and C2, achieving immediate containment."
+}<｜end▁of▁sentence｜>
+
+
 
 
 ## Author & Maintainer

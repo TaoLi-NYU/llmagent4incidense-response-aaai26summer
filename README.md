@@ -186,10 +186,31 @@ I note that in the logs provided, there is no information or recorded events ind
 ...
 ```
 
+## Response generation
 
+Command:
 
+```bash
+python examples/response_generation.py
+```
 
+Expected output (example):
 
+```text
+Loading weights: 100% 579/579 [00:09<00:00, 58.45it/s]
+adapter_model.safetensors: 100% 201M/201M [00:14<00:00, 14.2MB/s]
+tokenizer_config.json: 100% 3.07k/3.07k [00:00<00:00, 10.3MB/s]
+tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 136MB/s]
+README.md: 100% 33.0/33.0 [00:00<00:00, 199kB/s]
+examples_16_june.json: 100% 536M/536M [00:08<00:00, 60.4MB/s]
+Generating train split: 1 examples [00:09,  9.15s/ examples]
+[transformers] Setting `pad_token_id` to `eos_token_id`:151643 for open-end generation.
+I understand that simply containing and preserving evidence is not enough; the adversary must be fully removed. Since malicious payloads and backdoors could persist, I choose to perform malware eradication by reimaging affected hosts, applying patches, and removing unauthorized persistence mechanisms.</think>
+{
+    "Action": "Reimage or malware-scan and clean affected hosts, apply latest patches, and remove any unauthorized persistence mechanisms.",
+    "Explanation": "Reimaging and malware removal eradicate malware and close exploited vulnerabilities, ensuring the environment is clean."
+}
+```
 
 
 ## Author & Maintainer

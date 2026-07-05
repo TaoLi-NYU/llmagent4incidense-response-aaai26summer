@@ -226,6 +226,7 @@ Our paper is available [here](https://ojs.aaai.org/index.php/AAAI-SS/article/vie
   doi       = {10.1609/aaaiss.v9i1.42938},
   url       = {https://doi.org/10.1609/aaaiss.v9i1.42938}
 }
+```
 
 
 ## Author & Maintainer

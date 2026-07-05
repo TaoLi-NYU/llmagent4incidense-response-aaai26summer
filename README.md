@@ -212,6 +212,21 @@ I understand that simply containing and preserving evidence is not enough; the a
 }
 ```
 
+## Publications
+Our paper is available [here](https://ojs.aaai.org/index.php/AAAI-SS/article/view/42938)
+```bibtex
+@inproceedings{yiran26ir,
+  author    = {Gao, Yiran and Hammar, Kim and Li, Tao},
+  title     = {{In-Context Autonomous Network Incident Response: An End-to-End Large Language Model Agent Approach}},
+  booktitle = {Proceedings of the {AAAI} Symposium Series},
+  volume    = {9},
+  pages     = {246--254},
+  year      = {2026},
+  month     = jun,
+  doi       = {10.1609/aaaiss.v9i1.42938},
+  url       = {https://doi.org/10.1609/aaaiss.v9i1.42938}
+}
+
 
 ## Author & Maintainer
 Yiran Gao gaoyiran525@gmail.com
